@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisWrapper", "RedisWrapper\RedisWrapper.csproj", "{463CCCD1-C8C3-4BF3-B390-92AEC2C6DFC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCacheService", "DataCacheService\DataCacheService.csproj", "{A4AD877F-2EB5-4023-BA08-C4CF89514C00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{463CCCD1-C8C3-4BF3-B390-92AEC2C6DFC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{463CCCD1-C8C3-4BF3-B390-92AEC2C6DFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{463CCCD1-C8C3-4BF3-B390-92AEC2C6DFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{463CCCD1-C8C3-4BF3-B390-92AEC2C6DFC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4AD877F-2EB5-4023-BA08-C4CF89514C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4AD877F-2EB5-4023-BA08-C4CF89514C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4AD877F-2EB5-4023-BA08-C4CF89514C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4AD877F-2EB5-4023-BA08-C4CF89514C00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
