@@ -17,7 +17,7 @@ namespace RedisWrapper
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{setName}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new {setName = RouteParameter.Optional, id = RouteParameter.Optional }
             );
         }
     }

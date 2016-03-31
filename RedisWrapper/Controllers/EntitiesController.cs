@@ -1,7 +1,4 @@
 ﻿using DataCacheService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -10,34 +7,26 @@ namespace RedisWrapper.Controllers
 {
     public class EntitiesController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
-        {
-
-           return new string[] { "value1", "value2" };
-        }
-
         // GET api/values/5
-        public Employee Get(string setName, int id)
+        public dynamic Get(string setName, int id)
         {
-            return Program.Get(setName, id);
+            return RedisConnector.Get(setName, id);
         }
 
         // POST api/values
-        public void Post(string setName, [FromBody]Employee employee)
+        public void Post(string setName, [FromBody]dynamic employee)
         {
-            Program.Set(setName, employee);
+            if (employee.id == null)
+            {
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.BadRequest, "The item must have an 'id' member."));
+            }
+
+            RedisConnector.Set(setName, employee);
         }
 
-        //// PUT api/values/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        // DELETE api/values/5
         public void Delete(int id)
         {
-            Program.Remove(id);
+            RedisConnector.Remove(id);
         }
     }
 }
