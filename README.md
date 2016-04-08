@@ -24,7 +24,7 @@ Examples:
 <pre><code>PS C:\Users\adrianpoplavsky> (Invoke-WebRequest "http://site.azurewebsites.net/api/entities/get/building/1").Content
 {"id":"1","sarasa":"Marcelo","legajo":"239722"}</code></pre>
 
-<pre><code>PS C:\Users\adrianpoplavsky> Invoke-WebRequest "http://site.azurewebsites.net/api/entities/set/building/1" -Body '{"id": "1","sarasa": "Marcelo","legajo": "239722"}' -Method POST -ContentType "application/json"
+<pre><code>PS C:\Users\adrianpoplavsky> Invoke-WebRequest "http://site.azurewebsites.net/api/entities/set/building" -Body '{"id": "1","sarasa": "Marcelo","legajo": "239722"}' -Method POST -ContentType "application/json"
 StatusCode        : 204
 StatusDescription : No Content
 Content           : {}
