@@ -7,14 +7,14 @@ namespace RedisWrapper.Controllers
 {
     public class EntitiesController : ApiController
     {
-        [HttpGet, Route("api/entities/get/{setName}/{id}")]
+        [HttpGet, Route("get/{setName}/{id}")]
         public dynamic Get(string setName, int id)
         {
 
             return RedisConnector.Get(setName, id);
         }
 
-        [HttpPost, Route("api/entities/set/{setName}")]
+        [HttpPost, Route("set/{setName}")]
         public void Post(string setName, [FromBody]dynamic employee)
         {
             if (employee.id == null)

@@ -53,9 +53,11 @@ namespace DataCacheService
         {
             // Replace these values with the values from your Azure Redis Cache instance.
             // For more information, see http://aka.ms/ConnectToTheAzureRedisCache
-            string redisCacheName = ConfigurationManager.AppSettings["redisCacheName"];
-            string redisCachePassword = ConfigurationManager.AppSettings["redisCachePassword"];
-            return ConnectionMultiplexer.Connect(redisCacheName + ",abortConnect=false,ssl=true,password=" + redisCachePassword);
+            var redisCacheName = ConfigurationManager.AppSettings["redisCacheName"];
+            var redisCachePassword = ConfigurationManager.AppSettings["redisCachePassword"];
+            var useSSL = Convert.ToBoolean(ConfigurationManager.AppSettings["redisCacheuseSSL"]);
+
+            return ConnectionMultiplexer.Connect(redisCacheName + ",abortConnect=false,ssl=" + useSSL + ",password=" + redisCachePassword);
         });
 
         static ConnectionMultiplexer Connection
@@ -72,7 +74,7 @@ namespace DataCacheService
 
         public static void Set(string setName, dynamic employee)
         {
-        
+
             var cache = Connection.GetDatabase();
             var employeeId = (int)employee.id;
 

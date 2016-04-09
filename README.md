@@ -7,7 +7,7 @@ Commands currently implemented:
 <li>set</li>
 </ol>
 
-Requires appsettings to be added to the web.config. Set rediscachename & rediscachepassword settings with your values:
+Requires appsettings to be added to the web.config. Set rediscachename, redisCacheuseSSL (true or false) & rediscachepassword settings with your values:
 ```
 <appSettings>
   <add key="webpages:Version" value="3.0.0.0" />
@@ -17,14 +17,15 @@ Requires appsettings to be added to the web.config. Set rediscachename & redisca
 
   <add key="redisCacheName" value="YourRedisCacheName" />
   <add key="redisCachePassword" value="YourRedisCachePassword" />
+  <add key="redisCacheuseSSL" value="YourChoice" />
 </appSettings>
 ```
 
 Examples:
-<pre><code>PS C:\Users\adrianpoplavsky> (Invoke-WebRequest "http://site.azurewebsites.net/api/entities/get/building/1").Content
+<pre><code>PS C:\Users\adrianpoplavsky> (Invoke-WebRequest "http://site.azurewebsites.net/get/building/1").Content
 {"id":"1","sarasa":"Marcelo","legajo":"239722"}</code></pre>
 
-<pre><code>PS C:\Users\adrianpoplavsky> Invoke-WebRequest "http://site.azurewebsites.net/api/entities/set/building" -Body '{"id": "1","sarasa": "Marcelo","legajo": "239722"}' -Method POST -ContentType "application/json"
+<pre><code>PS C:\Users\adrianpoplavsky> Invoke-WebRequest "http://site.azurewebsites.net/set/building" -Body '{"id": "1","sarasa": "Marcelo","legajo": "239722"}' -Method POST -ContentType "application/json"
 StatusCode        : 204
 StatusDescription : No Content
 Content           : {}
